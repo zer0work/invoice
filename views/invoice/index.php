@@ -8,27 +8,23 @@ use yii\bootstrap\Modal;
 /* @var $this yii\web\View */
 /* @var $invoices app\models\Invoice */
 
-$this->title = 'Invoices';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Накладные';
 ?>
 <div class="invoice-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Создать накладную', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-<!--    --><?php //$form = ActiveForm::begin();
-//          $form->action = '/invoice/delete';
-//    ?>
+
+    <?php Pjax::begin(); ?>
         <table class="table table-bordered table-striped">
             <tr>
                 <th><input type="checkbox" id="checkall"></th>
-                <th>Откуда</th>
-                <th>Куда</th>
-                <th>Получатель</th>
-                <th>Сатаус</th>
+                <th><?= $sort->link('from') ?></th>
+                <th><?= $sort->link('in') ?></th>
+                <th><?= $sort->link('client') ?></th>
+                <th><?= $sort->link('status_id') ?></th>
                 <th></th>
             </tr>
 
@@ -42,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <td><?= $invoice->status ?></td>
                         <td><?php
                             Modal::begin([
+                                'clientOptions' => ['backdrop' => false],
                                 'toggleButton' => [
                                     'tag' => 'a',
                                     'label' => 'Изменить',
@@ -56,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                 <?php endforeach; ?>
         </table>
+    <?php Pjax::end(); ?>
         <div class="form-group">
         <?= Html::dropDownList(
                 'dropdown',
@@ -63,8 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['all'=> 'Удалить все', 'selected' => 'Только выбранные'],
                 ['prompt' => 'Удалить', 'id' => 'dropdown']
         ) ?>
-            <?= Html::Button('Применить', ['class' => 'btn btn-success', 'name' => 'delBtn', 'data-method'=>'post', 'onclick'=>'delInvoice()']) ?>
+            <?= Html::Button('Применить', ['class' => 'btn btn-default', 'name' => 'delBtn', 'data-method'=>'post', 'onclick'=>'delInvoice()']) ?>
         </div>
-<!--    --><?php //ActiveForm::end(); ?>
 
 </div>

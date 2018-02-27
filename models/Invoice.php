@@ -31,6 +31,7 @@ class Invoice extends \yii\db\ActiveRecord
         return [
             [['status_id'], 'integer'],
             [['from', 'in', 'client'], 'string', 'max' => 80],
+            [['from', 'in', 'client', 'status_id'], 'required'],
         ];
     }
 

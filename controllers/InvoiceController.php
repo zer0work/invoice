@@ -4,10 +4,10 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Invoice;
-use app\models\InvoiceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\Sort;
 
 /**
  * InvoiceController implements the CRUD actions for Invoice model.
@@ -35,16 +35,40 @@ class InvoiceController extends Controller
      */
     public function actionIndex()
     {
-//        $searchModel = new InvoiceSearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//
-//        return $this->render('index', [
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
-//        ]);
+        $sort = new Sort([
+            'attributes' => [
+                'client' => [
+                    'asc' => ['client' => SORT_ASC ],
+                    'desc' => ['client' => SORT_DESC],
+                    'label' => 'Получатель'
+                ],
+                'from' => [
+                    'asc' => ['from' => SORT_ASC ],
+                    'desc' => ['from' => SORT_DESC],
+                    'label' => 'Откуда'
+                ],
+                'in' => [
+                    'asc' => ['in' => SORT_ASC ],
+                    'desc' => ['in' => SORT_DESC],
+                    'label' => 'Куда'
+                ],
+                'status_id' => [
+                    'asc' => ['status_id' => SORT_ASC ],
+                    'desc' => ['status_id' => SORT_DESC],
+                    'label' => 'Статус'
+                ],
 
-        $invoices = Invoice::find()->all();
-        return $this->render('index', compact('invoices'));
+            ],
+        ]);
+
+        $invoices = Invoice::find()
+            ->orderBy($sort->orders)
+            ->all();
+
+        return $this->render('index', [
+            'invoices' => $invoices,
+            'sort' => $sort,
+        ]);
     }
 
 
@@ -78,12 +102,15 @@ class InvoiceController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+//            return $this->redirect(['index']);
+//            return $this->render('update', [
+//                'model' => $model,
+//            ]);
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+            return $this->actionIndex();
+//        return $this->render('update', [
+//            'model' => $model,
+//        ]);
     }
 
     /**

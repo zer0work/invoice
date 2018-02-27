@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $model app\models\Invoice */
 /* @var $form yii\widgets\ActiveForm */
@@ -19,7 +19,7 @@ $rows = ArrayHelper::getColumn($rows, 'name');
 <div class="invoice-form">
 
     <?php
-        $form = ActiveForm::begin();
+        $form = ActiveForm::begin(['options' => ['data-pjax' => true]]);
         if (isset($action)) {
             $form->action = $action;
         }
