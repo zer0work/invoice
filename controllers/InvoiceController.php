@@ -101,16 +101,10 @@ class InvoiceController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['index']);
-//            return $this->render('update', [
-//                'model' => $model,
-//            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
         }
-            return $this->actionIndex();
-//        return $this->render('update', [
-//            'model' => $model,
-//        ]);
+        return $this->actionIndex();
     }
 
     /**
