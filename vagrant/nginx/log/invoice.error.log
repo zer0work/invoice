@@ -19,3 +19,45 @@ PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response head
 2018/03/01 09:59:14 [error] 2707#2707: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
 PHP message: PHP Stack trace:
 PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 18:54:22 [error] 27107#27107: *16 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: The requested page does not exist. in /app/controllers/InvoiceController.php:157
+Stack trace:
+#0 /app/controllers/InvoiceController.php(133): app\controllers\InvoiceController->findModel('')
+#1 [internal function]: app\controllers\InvoiceController->actionDelete(NULL)
+#2 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAc" while reading upstream, client: 192.168.83.1, server: invoice.test, request: "POST /invoice/delete HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.test", referrer: "http://invoice.test/invoice/index"
+2018/03/01 19:07:48 [error] 27107#27107: *180 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: The requested page does not exist. in /app/controllers/InvoiceController.php:157
+Stack trace:
+#0 /app/controllers/InvoiceController.php(102): app\controllers\InvoiceController->findModel('13')
+#1 [internal function]: app\controllers\InvoiceController->actionUpdate('13')
+#2 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Inline" while reading upstream, client: 192.168.83.1, server: invoice.test, request: "POST /invoice/update?id=13 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.test", referrer: "http://invoice.test/invoice/update?id=13"
+2018/03/01 19:07:51 [error] 27107#27107: *180 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: The requested page does not exist. in /app/controllers/InvoiceController.php:157
+Stack trace:
+#0 /app/controllers/InvoiceController.php(102): app\controllers\InvoiceController->findModel('13')
+#1 [internal function]: app\controllers\InvoiceController->actionUpdate('13')
+#2 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Inline" while reading upstream, client: 192.168.83.1, server: invoice.test, request: "GET /invoice/update?id=13 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.test", referrer: "http://invoice.test/invoice/create"
