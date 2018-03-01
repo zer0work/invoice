@@ -1,0 +1,21 @@
+2018/03/01 09:18:20 [error] 2022#2022: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 09:18:36 [error] 2022#2022: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 09:19:51 [error] 2022#2022: *13 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 09:19:53 [error] 2022#2022: *13 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET /debug/default/toolbar?tag=5a97c5b75ae2f HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev", referrer: "http://invoice.dev/"
+2018/03/01 09:19:58 [error] 2022#2022: *21 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 09:59:11 [error] 2707#2707: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
+2018/03/01 09:59:14 [error] 2707#2707: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: foo in /app/web/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /app/web/index.php:0" while reading response header from upstream, client: 192.168.83.1, server: invoice.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.0-fpm.sock:", host: "invoice.dev"
