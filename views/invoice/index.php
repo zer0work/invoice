@@ -61,7 +61,7 @@ $this->title = 'Накладные';
                 ['all'=> 'Удалить все', 'selected' => 'Только выбранные'],
                 ['prompt' => 'Удалить', 'id' => 'dropdown']
         ) ?>
-            <?= Html::Button('Применить', ['class' => 'btn btn-default', 'name' => 'delBtn', 'data-method'=>'post', 'onclick'=>'delInvoice()']) ?>
+            <?= Html::Button('Применить', ['type' => 'submit', 'class' => 'btn btn-default', 'name' => 'delBtn', 'data-method'=>'post', 'onclick'=>'delInvoice()']) ?>
         </div>
 
 </div>
