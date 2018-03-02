@@ -138,7 +138,7 @@ class InvoiceController extends Controller
             }
         }
 
-        return $this->redirect(['index']);
+        return $this->redirect('/');
     }
 
     /**
